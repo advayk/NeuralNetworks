@@ -19,20 +19,21 @@ public class Main {
 
         for (String line : file) {
             for (String word : line.split(" ")) {
-                if (k < 1) {
+                if (k == 0) {
                     header = line;
                 }
-                if(k>=1) {
+                if (k >= 1) {
                     ArrayList<String> example = new ArrayList<>();
-                    System.out.println(line);
-                    System.out.println("-------------");
+                 //   System.out.println("-------------");
                     example.add(line);
                     data.add(example); // prints the line
                 }
-                k++;
+               // System.out.println(k);
+            }
+            k++;
         }
         NeuralNet Nn = new NeuralNet();
-        Nn.func(data, 5);
+        Nn.func(data, 4);
     }
 }
 

@@ -1,26 +1,20 @@
 import java.util.List;
 
 public class HiddenNeuron {
-    int weights[];
+    double weight;
     List<SensorNeuron> input_neruons;
-    int output_neurons[];
+    List<OutputNeuron> ouputNeuronList;
     int error_signals[];
     int bias;
+    int label;
 
 
-    public int[] get_weight() {
+    public int get_weight() {
 
-        return weights;
+        return weight;
     }
 
-    public List<SensorNeuron> get_input_neruons() {
-        return input_neruons;
-    }
 
-    public int[] get_output_neurons() {
-
-        return output_neurons;
-    }
 
     public int[] get_error_signals() {
         return error_signals;
@@ -31,6 +25,16 @@ public class HiddenNeuron {
 
         return bias;
     }
+
+    public int getLabel(){
+
+        return label;
+    }
+    public List<OutputNeuron>  ouputNeuronList(){
+        return ouputNeuronList;
+    }
+
+
 
 
 }
