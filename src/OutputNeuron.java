@@ -1,6 +1,13 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class OutputNeuron {
     int label;
-    String value;
+    double myvalue;
+    ArrayList<Double> weight = new ArrayList<Double>();
+    public ArrayList<HiddenNeuron> hiddenNeuronList;
+
 
     int bias;
 
@@ -8,18 +15,20 @@ public class OutputNeuron {
         return label;
     }
 
-    public String getValue(String value){
-
-        return value;
+    public void value(Double value){
+        myvalue = value;
     }
 
-    public double getWeight(Double weight){
+    public Double get_value() {
+        return myvalue;
+    }
 
+
+    public ArrayList get_weight(){
         return weight;
     }
 
     public double bias(Double bias){
-
         return bias;
     }
 

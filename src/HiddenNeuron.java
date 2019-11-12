@@ -1,24 +1,23 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class HiddenNeuron {
-    double weight;
-    List<SensorNeuron> input_neruons;
-    List<OutputNeuron> ouputNeuronList;
-    int error_signals[];
+
+    ArrayList<Double> weight = new ArrayList<Double>();
+    ArrayList<String> sensorNeuronList;
+
+    int error_signals;
     int bias;
-    int label;
+    double value;
+    double hidden_error_signal() {
+        return 0;
+    }
 
-
-    public int get_weight() {
-
+    public ArrayList get_weight(){
         return weight;
     }
 
-
-
-    public int[] get_error_signals() {
-        return error_signals;
-
+    public void add_weight(double x) {
+        weight.add(x);
     }
 
     public int get_bias() {
@@ -26,12 +25,8 @@ public class HiddenNeuron {
         return bias;
     }
 
-    public int getLabel(){
-
-        return label;
-    }
-    public List<OutputNeuron>  ouputNeuronList(){
-        return ouputNeuronList;
+    public void value(Double value){
+        value = value;
     }
 
 

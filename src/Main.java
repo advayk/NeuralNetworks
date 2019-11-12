@@ -8,32 +8,40 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<ArrayList> data = new ArrayList<>();
-
+        ArrayList<String> header = new ArrayList<>();
 
         double value = 0.5;
         SimpleFile file = new SimpleFile("files", "AndDataSet");
 
         int i = 0;
         int k = 0;
-        String header = null;
 
         for (String line : file) {
-            for (String word : line.split(" ")) {
+//            System.out.println(line);
+//            System.out.println(k);
+            ArrayList<String> example = new ArrayList<>();
+            for (String word : line.split(",")) {
+              //  System.out.println(word);
                 if (k == 0) {
-                    header = line;
+                    header.add(word);
                 }
                 if (k >= 1) {
-                    ArrayList<String> example = new ArrayList<>();
                  //   System.out.println("-------------");
-                    example.add(line);
+                    example.add(word);
                     data.add(example); // prints the line
                 }
                // System.out.println(k);
             }
             k++;
         }
+//        System.out.println(data);
+       // System.out.println("Header: " + header.size());
         NeuralNet Nn = new NeuralNet();
-        Nn.func(data, 4);
+        int num_inputs = header.size() -1;
+        for (int j = 0; j < 1; j++) {
+           // System.out.println(data.get(j));
+            Nn.create_neural_net(data.get(j), data.size(),1);
+        }
     }
 }
 
