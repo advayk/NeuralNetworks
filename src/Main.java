@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 // Advay Koranne
 // Andrew Merill
-// Neural Nets 
+// Neural Nets
 // http://inside.catlin.edu/site/compsci/topics/AI/NeuralNetworkLearning.html
 
 public class Main {
@@ -36,11 +36,11 @@ public class Main {
         }
 //        System.out.println(data);
        // System.out.println("Header: " + header.size());
-        NeuralNet Nn = new NeuralNet();
+        NeuralNet2 NN = new NeuralNet2();
         int num_inputs = header.size() -1;
         for (int j = 0; j < 1; j++) {
            // System.out.println(data.get(j));
-            Nn.create_neural_net(data.get(j), data.size(),1);
+            NN.create_neural_net(data.get(j), data.size(),1);
         }
     }
 }
