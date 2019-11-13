@@ -38,9 +38,9 @@ public class Main {
        // System.out.println("Header: " + header.size());
         NeuralNet2 NN = new NeuralNet2();
         int num_inputs = header.size() -1;
-        for (int j = 0; j < 1; j++) {
+        for (int j = 0; j < data.size(); j++) {
            // System.out.println(data.get(j));
-            NN.create_neural_net(data.get(j), data.size(),1);
+            NN.create_neural_net(data.get(j),2,2);
         }
     }
 }

@@ -10,8 +10,11 @@ public class Neuron {
 
     public double ActualResult(ArrayList input) {
         double sum = 0;
-        for (int i = 0; i < input.size(); i++) {
+        for (int i = 0; i < input.size()-1; i++) {
+            System.out.println("input" + input);
+           
             sum += (new Double(input.get(i).toString())) * weight.get(i);
+            System.out.println(sum);
             double ActivationResult = activationFunction(sum);
         }
         double ActivationResult = activationFunction(sum);

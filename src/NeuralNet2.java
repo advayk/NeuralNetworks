@@ -71,7 +71,7 @@ public class NeuralNet2 {
         System.out.println(hidden_neuron_list);
 
         calculate_error_signals();
-
+        UpdateWeights();
 
     }
 
@@ -114,9 +114,6 @@ public class NeuralNet2 {
                     HN.weight.set(k, HN.weight.get(k) + HN.ErrorSignal*(new Double(sensor_values_list.get(j).toString())*LearningRate));
                 }
             }
-
         }
     }
-
-
 }
