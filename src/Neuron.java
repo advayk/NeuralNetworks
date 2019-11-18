@@ -3,24 +3,29 @@ import java.util.Objects;
 
 public class Neuron {
     ArrayList<Object> inputs = new ArrayList<Object>();
-    ArrayList<Double> weight = new ArrayList<Double>();
+    public ArrayList<Double> weight = new ArrayList<Double>();
     int bias;
-    double ActualResult;
+    double myActualResult;
     double ErrorSignal;
 
-    public double ActualResult(ArrayList input) {
-        double sum = 0;
-        for (int i = 0; i < input.size()-1; i++) {
-            System.out.println("input" + input);
-           
-            sum += (new Double(input.get(i).toString())) * weight.get(i);
-            System.out.println(sum);
-            double ActivationResult = activationFunction(sum);
-        }
-        double ActivationResult = activationFunction(sum);
-        return ActivationResult;
-    }
+//    for each input i: compute the product of inputi × weighti
+//    compute the sum of the products
+//    apply the activation function to the sum
+//    the answer is the ActualResult computed by the perceptron
 
+    public double ActualResult(Neuron neuron, double [] input) {
+        System.out.println("lenght of weight list: " + neuron.weight);
+        double sum = 0;
+        for (int i = 0; i < input.length; i++) {
+            System.out.println("input" + input);
+            sum = sum + input[i] *  neuron.weight.get(i);
+            System.out.println(sum);
+            //double ActivationResult = activationFunction(sum);
+            //ActualResult = ActivationResult;
+        }
+        double myActualResult = activationFunction(sum);
+        return myActualResult;
+    }
 
     public double activationFunction(double x) {
         double value = (1 / (1 + (Math.exp(-x))));
