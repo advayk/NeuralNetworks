@@ -42,10 +42,10 @@ public class Main {
         for (int a = 0; a < epochs; a++) {
             for (int j = 0; j < data.size(); j++) {
                 NN.read_in_examples(data.get(j));
-                NN.output_percentage();
-                System.out.println("---------------------------");
+                //System.out.println("---------------------------");
             }
         }
+        NN.output_percentage();
 
     }
 }
