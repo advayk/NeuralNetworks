@@ -38,7 +38,7 @@ public class Main {
         NN.initialize_weights(2,2);
         int num_inputs = header.size() - 1;
      //   System.out.println("Data: " + data);
-        int epochs = 85;
+        int epochs = 100;
         for (int a = 0; a < epochs; a++) {
             for (int j = 0; j < data.size(); j++) {
                 NN.read_in_examples(data.get(j));

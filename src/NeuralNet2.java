@@ -24,13 +24,13 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
 
     public void read_in_examples(ArrayList<Double> example) {
         num_runs +=1;
-      //  System.out.println("example: " + example);
-        for (int i = 1; i < example.size()-1; i++) {
+        System.out.println("example: " + example);
+        for (int i = 1; i < example.size(); i++) {
             sensor_values_list[i-1] = example.get(i);
         }
+        System.out.println("sensor values list: " + sensor_values_list[0] + "," + sensor_values_list[1]);
 //        System.out.println("example: " + example.get(0));
         actual_category_value = example.get(0);
-        run_neural_net_on_example();
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
             if(ON.label == actual_category_value) {
@@ -40,6 +40,7 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
                 ON.CorrectResult = 0;
             }
         }
+        run_neural_net_on_example();
     }
 
     public void set_topology(int num_input_neuron, int num_hidden_neuron, int num_output_neuron) {
@@ -78,7 +79,7 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
     }
 
 
-    public void run_neural_net_on_example() {
+    private void run_neural_net_on_example() {
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
             Neuron HN = hidden_neuron_list.get(i);
             HN.ActualResult(HN, sensor_values_list);
@@ -90,12 +91,12 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
             output_sensor_values_list[i] = ON.myActualResult;
         }
         calculate_error_signals();
-        output_neural_net();
         update_weights();
+        output_neural_net();
     }
 
 
-    public void calculate_error_signals() {
+    private void calculate_error_signals() {
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
             double OutputErrorSignal =  ((ON.CorrectResult - ON.myActualResult) * ON.myActualResult * (1 - ON.myActualResult));
@@ -115,7 +116,7 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
         }
     }
 
-    public void update_weights() {
+    private void update_weights() {
 //        System.out.println("*** Changing Weights ***");
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
@@ -126,7 +127,7 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
                     ON.weight.set(k, output_weight);
                 }
             }
-            ON.bias = ON.bias_weight + ON.ErrorSignal + ON.ErrorSignal*ON.bias*LearningRate;
+            ON.bias_weight = ON.bias_weight + ON.ErrorSignal + ON.ErrorSignal*ON.bias*LearningRate;
         }
 
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
@@ -138,11 +139,11 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
 
                 }
             }
-            HN.bias = HN.bias_weight + HN.ErrorSignal + HN.ErrorSignal*HN.bias*LearningRate; // Updates Bias Weights
+            HN.bias_weight = HN.bias_weight + HN.ErrorSignal + HN.ErrorSignal*HN.bias*LearningRate; // Updates Bias Weights
         }
     }
 
-    public void output_neural_net() {
+    private void output_neural_net() {
         ArrayList<Double> output = new ArrayList<Double>();
         double value = 0;
         Neuron Greatest_NEURON = null;
