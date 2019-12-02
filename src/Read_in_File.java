@@ -74,16 +74,8 @@ public class Read_in_File {
         System.out.println("-------------Final Results for " + filename + "--------");
         System.out.println("epochs: " + epochs );
         System.out.println("percentage accuracy: " + percentage);
+        System.out.println("-------------------------------------------------------");
 
     }
 }
 
-
-
-//        System.out.println("---------Final Output--------------");
-//        System.out.println("num of epochs: " + epochs + " for an desired accuracy of: " + desired_percentage_accuracy_training);
-//        System.out.println("acurracy achieved: " + NN.output_percentage());
-//                if (print_counter % 10000 == 0) {
-//                    System.out.println("num epochs: " + epochs);
-//                    System.out.println("percentage: " + NN.output_percentage());
-//                }
