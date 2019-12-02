@@ -64,14 +64,14 @@ public class Read_in_File {
                 }
             }
             percentage = (correct / total_trials) * 100;
-            if (epochs % 10000 == 0) {
+            if (epochs % 1000 == 0) {
                 System.out.println("epochs: " + epochs );
                 System.out.println("percentage accuracy: " + percentage);
             }
 
         }
         System.out.println("");
-        System.out.println("-------------Final Results-------------");
+        System.out.println("-------------Final Results for " + filename + "--------");
         System.out.println("epochs: " + epochs );
         System.out.println("percentage accuracy: " + percentage);
 
