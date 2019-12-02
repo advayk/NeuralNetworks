@@ -3,8 +3,8 @@ import java.util.ArrayList;
 //https://www.java67.com/2016/08/how-to-replace-element-of-arraylist-in-java.html
 
 public  class NeuralNet2<actual_category_value, percentage_correct> {
-    public double percentage_correct = 0;
-    public double num_runs = 0;
+    private double percentage_correct = 0;
+    private double num_runs = 0;
 
 
     ArrayList output_of_network = new ArrayList<Double>();
@@ -15,7 +15,7 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
 
     private int number_of_hidden_neurons = 2;
     private int number_of_output_neuron = 2;
-    private double LearningRate = 1;
+    private double LearningRate = 0.05;
 
     private double [] sensor_values_list = new double [2];
     private double [] hidden_sensor_values_list = new double [2];
@@ -167,9 +167,8 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
 
     }
 
-    public void output_percentage() {
+    public double output_percentage() {
         for (int i = 0; i < output_neuron_list.size(); i++) {
-            System.out.println("**");
             Neuron ON = output_neuron_list.get(i);
 //            System.out.println(ON.label + ", " + ON.CorrectResult);
 //            System.out.println("label: " + ON.label);
@@ -180,8 +179,9 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
 //        System.out.println("Hidden Neuron List: " + hidden_neuron_list  );
 //        System.out.println("Output Neuron List: " + output_neuron_list  );
 //        System.out.println("number of runs: " + num_runs);
-        System.out.println("percentage: " + (percentage_correct/num_runs)*100);
+        return (percentage_correct/num_runs)*100;
     }
+
 }
 
 
