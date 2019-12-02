@@ -45,10 +45,7 @@ public class Read_in_File {
         while(intial_training < 10) {
             for(int j = 0; j < data.size(); j++) {
                 NN.read_in_examples(data.get(j));
-//                System.out.println(NN.output_percentage());
-                //System.out.println("---------------------------");
             }
-//            System.out.println(intial_training);
             intial_training++;
         }
 
