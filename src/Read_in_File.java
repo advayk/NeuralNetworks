@@ -27,42 +27,63 @@ public class Read_in_File {
                     example.add(int_to_word);
                 }
             }
-            if(k>=1) {
+            if (k >= 1) {
                 data.add(example); // prints the line
             }
             k++;
         }
 
         NeuralNet2 NN = new NeuralNet2();
-        NN.set_topology(2,2,2);
-        NN.initialize_weights(2,2);
+        NN.set_topology(2, 2, 2);
+        NN.initialize_weights(2, 2);
         int num_inputs = header.size() - 1;
-     //   System.out.println("Data: " + data);
+        //   System.out.println("Data: " + data);
 
-        int epochs = 0;
-        int intial_training = 0;
-        int print_counter = 0;
-        while(intial_training < 10) {
-            for(int j = 0; j < data.size(); j++) {
-                NN.read_in_examples(data.get(j));
-            }
-            intial_training++;
-        }
 
-        while(NN.output_percentage() < desired_percentage_accuracy_training) {
-            for (int j = 0; j < data.size(); j++) {
-                NN.read_in_examples(data.get(j));
+
+        double percentage = 0;
+        double epochs = 0;
+        while(percentage < desired_percentage_accuracy_training) {
+            if(epochs > 1000000) {
+                System.out.println("----------------------------------");
+                System.out.println("over 1 mil epochs can not complete");
+                System.out.println("----------------------------------");
+                break;
             }
             epochs += 1;
-            if (print_counter % 10000 == 0) {
-                System.out.println("num epochs: " + epochs);
-                System.out.println("percentage: " + NN.output_percentage());
+            double total_trials = 0;
+            double correct = 0;
+            int incorrect = 0;
+            for (int j = 0; j < data.size(); j++) {
+                epochs += 1;
+                total_trials += 1;
+                if (NN.read_in_examples(data.get(j)) == true) {
+                    correct += 1;
+                } else {
+                    incorrect += 1;
+                }
             }
-            print_counter+=1;
+            percentage = (correct / total_trials) * 100;
+            if (epochs % 10000 == 0) {
+                System.out.println("epochs: " + epochs );
+                System.out.println("percentage accuracy: " + percentage);
+            }
+
         }
-        System.out.println("---------Final Output--------------");
-        System.out.println("num of epochs: " + epochs + " for an desired accuracy of: " + desired_percentage_accuracy_training);
-        System.out.println("acurracy achieved: " + NN.output_percentage());
+        System.out.println("");
+        System.out.println("-------------Final Results-------------");
+        System.out.println("epochs: " + epochs );
+        System.out.println("percentage accuracy: " + percentage);
+
     }
 }
 
+
+
+//        System.out.println("---------Final Output--------------");
+//        System.out.println("num of epochs: " + epochs + " for an desired accuracy of: " + desired_percentage_accuracy_training);
+//        System.out.println("acurracy achieved: " + NN.output_percentage());
+//                if (print_counter % 10000 == 0) {
+//                    System.out.println("num epochs: " + epochs);
+//                    System.out.println("percentage: " + NN.output_percentage());
+//                }
