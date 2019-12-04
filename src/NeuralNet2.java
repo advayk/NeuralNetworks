@@ -2,11 +2,15 @@ import java.util.ArrayList;
 
 //https://www.java67.com/2016/08/how-to-replace-element-of-arraylist-in-java.html
 
-public  class NeuralNet2<actual_category_value, percentage_correct> {
-    private double percentage_correct = 0;
+public  class NeuralNet2 {
+    private double LearningRate;
+    public NeuralNet2(int num_input_neuron, int num_hidden_neuron,int num_output_neuron, double LearningRate) {
+        set_topology(num_input_neuron, num_hidden_neuron, num_output_neuron);
+        initialize_weights(num_input_neuron, num_hidden_neuron);
+        this.LearningRate = LearningRate;
+    }
+
     private double num_runs = 0;
-
-
     ArrayList output_of_network = new ArrayList<Double>();
 
     private ArrayList<Neuron> hidden_neuron_list = new ArrayList<Neuron>();
@@ -15,20 +19,17 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
 
     private int number_of_hidden_neurons = 2;
     private int number_of_output_neuron = 2;
-    private double LearningRate = 0.05;
+
 
     private double [] sensor_values_list = new double [2];
     private double [] hidden_sensor_values_list = new double [2];
     private double [] output_sensor_values_list = new double [2];
 
-
     public boolean read_in_example(ArrayList<Double> example) {
         num_runs +=1;
-   //     System.out.println("example: " + example);
         for (int i = 1; i < example.size(); i++) {
             sensor_values_list[i-1] = example.get(i);
         }
-
         actual_category_value = example.get(0);
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
@@ -43,6 +44,7 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
         calculate_error_signals();
         update_weights();
         double output = output_neural_net();
+
         if(actual_category_value == output) {
             return true;
         }
@@ -121,7 +123,6 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
     }
 
     private void update_weights() {
-//        System.out.println("*** Changing Weights ***");
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
             for (int j = 0; j < hidden_neuron_list.size(); j++) {
@@ -160,14 +161,6 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
         }
         assert Greatest_NEURON != null;
         return Greatest_NEURON.label;
-
-    }
-
-    public double output_percentage() {
-        for (int i = 0; i < output_neuron_list.size(); i++) {
-            Neuron ON = output_neuron_list.get(i);
-        }
-        return (percentage_correct/num_runs)*100;
     }
 }
 

@@ -6,14 +6,13 @@ import java.util.ArrayList;
 // http://inside.catlin.edu/site/compsci/topics/AI/NeuralNetworkLearning.html
 
 public class Read_in_File {
+    ArrayList<ArrayList<Double>> data = new ArrayList<>();
+    ArrayList<String> header = new ArrayList<>();
+    ArrayList<String> sensor_weights = new ArrayList<>();
+    String file_name;
     public void read_file(String filename, int desired_percentage_accuracy_training) {
-        ArrayList<ArrayList<Double>> data = new ArrayList<>();
-        ArrayList<String> header = new ArrayList<>();
-        ArrayList<String> sensor_weights = new ArrayList<>();
-
-        double value = 0.5;
         SimpleFile file = new SimpleFile("files", filename);
-
+        file_name = filename;
         int i = 0;
         int k = 0;
         for (String line : file) {
@@ -32,12 +31,17 @@ public class Read_in_File {
             }
             k++;
         }
+        CreateNeuralNet(2,2,2,0.05);
 
-        NeuralNet2 NN = new NeuralNet2();
-        NN.set_topology(2, 2, 2);
-        NN.initialize_weights(2, 2);
-        int num_inputs = header.size() - 1;
-        //   System.out.println("Data: " + data);
+    }
+
+    private void CreateNeuralNet(int num_input_neuron, int num_hidden_neuron, int num_output_neuron, double LearningRate) {
+        NeuralNet2 NN = new NeuralNet2(num_input_neuron, num_hidden_neuron,  num_output_neuron, LearningRate);
+        RunNeuralNet(NN,90);
+    }
+
+    public void RunNeuralNet(NeuralNet2 NN,int desired_percentage_accuracy_training) {
+        System.out.println("------------- Results for " + file_name + "--------");
         double percentage = 0;
         double epochs = 0;
         while(percentage < desired_percentage_accuracy_training) {
@@ -65,14 +69,11 @@ public class Read_in_File {
                 System.out.println("epochs: " + epochs );
                 System.out.println("percentage accuracy: " + percentage);
             }
-
         }
         System.out.println("");
-        System.out.println("-------------Final Results for " + filename + "--------");
         System.out.println("epochs: " + epochs );
         System.out.println("percentage accuracy: " + percentage);
         System.out.println("-------------------------------------------------------");
-
     }
 }
 
