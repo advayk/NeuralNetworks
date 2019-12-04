@@ -13,9 +13,11 @@ public class Read_in_File {
     public void read_file(String filename, int desired_percentage_accuracy_training) {
         SimpleFile file = new SimpleFile("files", filename);
         file_name = filename;
+        int num_lines = 0;
         int i = 0;
         int k = 0;
         for (String line : file) {
+            num_lines +=1;
             ArrayList<Double> example = new ArrayList<>();
             for (String word : line.split(",")) {
                 if (k == 0) {
@@ -31,6 +33,7 @@ public class Read_in_File {
             }
             k++;
         }
+        System.out.println("SIZE OF THE DATA " + data.size());
         CreateNeuralNet(2,2,2,0.05);
 
     }
