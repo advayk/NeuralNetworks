@@ -22,14 +22,13 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
     private double [] output_sensor_values_list = new double [2];
 
 
-    public boolean read_in_examples(ArrayList<Double> example) {
+    public boolean read_in_example(ArrayList<Double> example) {
         num_runs +=1;
    //     System.out.println("example: " + example);
         for (int i = 1; i < example.size(); i++) {
             sensor_values_list[i-1] = example.get(i);
         }
-      //  System.out.println("sensor values list: " + sensor_values_list[0] + "," + sensor_values_list[1]);
-//        System.out.println("example: " + example.get(0));
+
         actual_category_value = example.get(0);
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
@@ -101,7 +100,6 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
         }
     }
 
-
     private void calculate_error_signals() {
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
@@ -154,37 +152,23 @@ public  class NeuralNet2<actual_category_value, percentage_correct> {
         double value = 0;
         Neuron Greatest_NEURON = null;
         for (int i = 0; i < output_sensor_values_list.length; i++) {
-//            System.out.println("OUTPUT: " + output_neuron_list.get(i).label);
-//            System.out.print("NEURAL NETWORK RESULT: ");
             output.add(output_neuron_list.get(i).myActualResult);
             if (output_neuron_list.get(i).return_my_Actualresult() > value) {
                 value = output_neuron_list.get(i).return_my_Actualresult();
                 Greatest_NEURON = output_neuron_list.get(i);
             }
-
-//           System.out.println(output_neuron_list.get(i).label + "  :  " + output_sensor_values_list[i]);
         }
+        assert Greatest_NEURON != null;
         return Greatest_NEURON.label;
-//        System.out.println("VALUE: " + value);
-//        System.out.println("Neural net output: " + Greatest_NEURON.label);
-//        System.out.println("Actual Value of the element: " + actual_category_value);
+
     }
 
     public double output_percentage() {
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
-//            System.out.println(ON.label + ", " + ON.CorrectResult);
-//            System.out.println("label: " + ON.label);
-//            System.out.println("neural net output: " + ON.myActualResult);
-//            System.out.println("actual value: " + actual_category_value);
         }
-
-//        System.out.println("Hidden Neuron List: " + hidden_neuron_list  );
-//        System.out.println("Output Neuron List: " + output_neuron_list  );
-//        System.out.println("number of runs: " + num_runs);
         return (percentage_correct/num_runs)*100;
     }
-
 }
 
 

@@ -38,9 +38,6 @@ public class Read_in_File {
         NN.initialize_weights(2, 2);
         int num_inputs = header.size() - 1;
         //   System.out.println("Data: " + data);
-
-
-
         double percentage = 0;
         double epochs = 0;
         while(percentage < desired_percentage_accuracy_training) {
@@ -57,14 +54,14 @@ public class Read_in_File {
             for (int j = 0; j < data.size(); j++) {
                 epochs += 1;
                 total_trials += 1;
-                if (NN.read_in_examples(data.get(j)) == true) {
+                if (NN.read_in_example(data.get(j)) == true) {
                     correct += 1;
                 } else {
                     incorrect += 1;
                 }
             }
             percentage = (correct / total_trials) * 100;
-            if (epochs % 1000 == 0) {
+            if (epochs % 100000 == 0) {
                 System.out.println("epochs: " + epochs );
                 System.out.println("percentage accuracy: " + percentage);
             }
