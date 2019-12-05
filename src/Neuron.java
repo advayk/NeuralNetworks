@@ -4,11 +4,6 @@ import java.util.Objects;
 public class Neuron {
     ArrayList<Object> inputs = new ArrayList<Object>();
     public ArrayList<Double> weight = new ArrayList<Double>();
-
-    public Neuron() {
-
-    }
-
     double bias;
     double myActualResult;
     double ErrorSignal;
@@ -16,12 +11,19 @@ public class Neuron {
     double label;
     double CorrectResult;
 
-    public void ActualResult(Neuron neuron, double [] input) {
+    public Neuron() {
+
+    }
+
+
+
+
+    public void ActualResult(double [] input) {
         double sum = 0;
         for (int i = 0; i < input.length; i++) {
-            sum  += input[i] * neuron.weight.get(i);
+            sum  += input[i] * weight.get(i);
         }
-        neuron.myActualResult = activationFunction(sum + (bias*bias_weight));
+        myActualResult = activationFunction(sum + (bias*bias_weight));
     }
 
     public double return_my_Actualresult() {

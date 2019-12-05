@@ -8,8 +8,11 @@ import java.util.ArrayList;
 public class Read_in_File {
     ArrayList<ArrayList<Double>> data = new ArrayList<>();
     ArrayList<String> header = new ArrayList<>();
+    ArrayList<String> category_value_list = new ArrayList<>();
+
     ArrayList<String> sensor_weights = new ArrayList<>();
     String file_name;
+
     public void read_file(String filename, int desired_percentage_accuracy_training) {
         SimpleFile file = new SimpleFile("files", filename);
         file_name = filename;
@@ -33,9 +36,7 @@ public class Read_in_File {
             }
             k++;
         }
-        System.out.println("SIZE OF THE DATA " + data.size());
-        CreateNeuralNet(2,2,2,0.05);
-
+        CreateNeuralNet(header.size()-1,2,2,1);
     }
 
     private void CreateNeuralNet(int num_input_neuron, int num_hidden_neuron, int num_output_neuron, double LearningRate) {
@@ -59,7 +60,6 @@ public class Read_in_File {
             double correct = 0;
             int incorrect = 0;
             for (int j = 0; j < data.size(); j++) {
-                epochs += 1;
                 total_trials += 1;
                 if (NN.read_in_example(data.get(j)) == true) {
                     correct += 1;
