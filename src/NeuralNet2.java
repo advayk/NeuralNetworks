@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public  class NeuralNet2 {
     private double learning_rate;
-    private double num_runs = 0;
     ArrayList output_of_network = new ArrayList<Double>();
 
     private ArrayList<Neuron> hidden_neuron_list = new ArrayList<Neuron>();
@@ -23,7 +22,6 @@ public  class NeuralNet2 {
     }
 
     public boolean read_in_example(ArrayList<Double> example) {
-        num_runs +=1;
         for (int i = 1; i < example.size(); i++) {
             sensor_values_list[i-1] = example.get(i);
         }
@@ -65,7 +63,6 @@ public  class NeuralNet2 {
         }
     }
 
-
     public void initialize_weights(int num_input_neuron, int number_of_hidden_neurons) {
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
             Neuron HN = hidden_neuron_list.get(i);
@@ -104,7 +101,6 @@ public  class NeuralNet2 {
             double OutputErrorSignal =  ((ON.CorrectResult - ON.myActualResult) * ON.myActualResult * (1 - ON.myActualResult));
             ON.ErrorSignal = OutputErrorSignal;
         }
-
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
             Neuron HN = hidden_neuron_list.get(i);
             double sum = 0.0;
@@ -123,32 +119,33 @@ public  class NeuralNet2 {
             Neuron ON = output_neuron_list.get(i);
             for (int j = 0; j < hidden_neuron_list.size(); j++) {
                 Neuron HN = hidden_neuron_list.get(j);
-                for (int k = 0; k < ON.weight.size(); k++) {
-                    Double output_weight = ON.weight.get(k) + ON.ErrorSignal*(HN.myActualResult)*learning_rate;
-                    ON.weight.set(k, output_weight);
-                }
+                Double output_weight = ON.weight.get(i) + ON.ErrorSignal*(HN.myActualResult)*learning_rate;
+                ON.weight.set(j, output_weight);
+//                for (int k = 0; k < ON.weight.size(); k++) {
+//                    Double output_weight = ON.weight.get(k) + ON.ErrorSignal*(HN.myActualResult)*learning_rate; // EACH HIDDEN NEURON ONLY HAS ONE WEIGHT GET RID OF THE FOR LOOP
+//                    ON.weight.set(k, output_weight);
+//                }
             }
             ON.bias_weight = ON.bias_weight + ON.ErrorSignal*ON.bias*learning_rate;
         }
-
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
             Neuron HN = hidden_neuron_list.get(i);
             for (int j = 0; j < sensor_values_list.length; j++) {
-                for (int k = 0; k < HN.weight.size(); k++) {
-                    Double hidden_weight = HN.weight.get(k) + HN.ErrorSignal*(sensor_values_list[j])*learning_rate;
-                    HN.weight.set(k, hidden_weight);
-                }
+                Double hidden_weight = HN.weight.get(j) + HN.ErrorSignal*(sensor_values_list[j])*learning_rate;
+                HN.weight.set(j, hidden_weight);
+//                for (int k = 0; k < HN.weight.size(); k++) {
+//                    Double hidden_weight = HN.weight.get(k) + HN.ErrorSignal*(sensor_values_list[j])*learning_rate;
+//                    HN.weight.set(k, hidden_weight);
+//                }
             }
             HN.bias_weight = HN.bias_weight + HN.ErrorSignal*HN.bias*learning_rate; // Updates Bias Weights
         }
     }
 
     private double output_neural_net() {
-        ArrayList<Double> output = new ArrayList<Double>();
         double value = 0;
         Neuron Greatest_NEURON = null;
-        for (int i = 0; i < output_sensor_values_list.length; i++) {
-            output.add(output_neuron_list.get(i).myActualResult);
+        for (int i = 0; i < output_neuron_list.size(); i++) {
             if (output_neuron_list.get(i).return_my_Actualresult() > value) {
                 value = output_neuron_list.get(i).return_my_Actualresult();
                 Greatest_NEURON = output_neuron_list.get(i);
@@ -158,7 +155,4 @@ public  class NeuralNet2 {
         return Greatest_NEURON.label;
     }
 }
-
-
-
 
