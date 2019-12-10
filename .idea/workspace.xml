@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f8eaf8-1bab-4c8c-89d2-2f1fe9c10a87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/DigitsTrainingDataSet.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DigitsTrainingDataSet.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/NeuralNet2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/NeuralNet2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Neuron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Neuron.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Read_in_File.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Read_in_File.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NeuralNet2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNet2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Neuron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Read_in_File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Read_in_File.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +25,17 @@
   </component>
   <component name="ProjectId" id="1SfMPpcMMFvo1N2aeIY6ovAU7dn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/files" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -94,5 +96,43 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="441" y="236" key="#Project_Structure" timestamp="1575958898866">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="441" y="236" key="#Project_Structure/0.23.1792.1097@0.23.1792.1097" timestamp="1575958898866" />
+    <state width="1468" height="334" key="GridCell.Tab.0.bottom" timestamp="1575960450496">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450496" />
+    <state width="1468" height="334" key="GridCell.Tab.0.center" timestamp="1575960450495">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450495" />
+    <state width="1468" height="334" key="GridCell.Tab.0.left" timestamp="1575960450495">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450495" />
+    <state width="1468" height="334" key="GridCell.Tab.0.right" timestamp="1575960450495">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450495" />
+    <state width="1468" height="334" key="GridCell.Tab.1.bottom" timestamp="1575960450496">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450496" />
+    <state width="1468" height="334" key="GridCell.Tab.1.center" timestamp="1575960450496">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450496" />
+    <state width="1468" height="334" key="GridCell.Tab.1.left" timestamp="1575960450496">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450496" />
+    <state width="1468" height="334" key="GridCell.Tab.1.right" timestamp="1575960450496">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1468" height="334" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1575960450496" />
   </component>
 </project>
