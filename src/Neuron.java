@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Neuron {
-    ArrayList<Object> inputs = new ArrayList<Object>();
     public ArrayList<Double> weight = new ArrayList<Double>();
     double bias;
     double myActualResult;

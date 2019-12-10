@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b2f8eaf8-1bab-4c8c-89d2-2f1fe9c10a87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/NeuralNet2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/NeuralNet2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Neuron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Neuron.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Read_in_File.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Read_in_File.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NeuralNet2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNet2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Neuron.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Neuron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Read_in_File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Read_in_File.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
