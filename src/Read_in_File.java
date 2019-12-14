@@ -42,9 +42,6 @@ public class Read_in_File {
         RunNeuralNet(NN,desired_percentage_accuracy_training);
     }
 
-//    private void CreateNeuralNet(int num_input_neuron, int num_hidden_neuron, int num_output_neuron, double LearningRate) {
-//
-//    }
 
     public void RunNeuralNet(NeuralNet2 NN,int desired_percentage_accuracy_training) {
         System.out.println("------------- Results for " + filename + "--------");

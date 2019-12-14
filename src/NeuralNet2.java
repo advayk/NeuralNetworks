@@ -25,7 +25,7 @@ public  class NeuralNet2 {
         for (int i = 1; i < example.size(); i++) {
             sensor_values_list[i-1] = example.get(i);
         }
-        actual_category_value = example.get(0);
+        actual_category_value = example.get(example.size()-1);
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
             if(ON.label == actual_category_value) {
@@ -86,7 +86,7 @@ public  class NeuralNet2 {
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
             Neuron HN = hidden_neuron_list.get(i);
             HN.ActualResult(sensor_values_list);
-            hidden_sensor_values_list[i] = HN.myActualResult;
+            hidden_sensor_values_list[i] = HN.myActualResult; //TODO: Ask Andrew when running debugger first time the hidden sensor list is (0,0)
         }
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
@@ -107,9 +107,6 @@ public  class NeuralNet2 {
             for (int o = 0; o < output_neuron_list.size(); o++) {
                 Neuron ON = output_neuron_list.get(o);
                 sum+= ON.ErrorSignal*ON.weight.get(h);
-//                for (int k = 0; k < ON.weight.size(); k++) {
-//                    sum+= ON.ErrorSignal*ON.weight.get(k);
-//                }
             }
             HN.ErrorSignal = sum*HN.myActualResult*(1-HN.myActualResult);
         }
@@ -122,22 +119,15 @@ public  class NeuralNet2 {
                 Neuron HN = hidden_neuron_list.get(h);
                 double output_weight = ON.weight.get(h) + ON.ErrorSignal*(HN.myActualResult)*learning_rate;
                 ON.weight.set(h, output_weight);
-//                for (int k = 0; k < ON.weight.size(); k++) {
-//                    Double output_weight = ON.weight.get(k) + ON.ErrorSignal*(HN.myActualResult)*learning_rate; // EACH HIDDEN NEURON ONLY HAS ONE WEIGHT GET RID OF THE FOR LOOP
-//                    ON.weight.set(k, output_weight);
-//                }
             }
+
             ON.bias_weight = ON.bias_weight + ON.ErrorSignal*ON.bias*learning_rate;
         }
         for (int h = 0; h < hidden_neuron_list.size(); h++) {
             Neuron HN = hidden_neuron_list.get(h);
             for (int i = 0; i < sensor_values_list.length; i++) {
-                Double hidden_weight = HN.weight.get(h) + HN.ErrorSignal*(sensor_values_list[i])*learning_rate;
-                HN.weight.set(i, hidden_weight); // Changed the HN.weight.get(h) from i to h and the HN.weight from (h,..) to (,...)
-//                for (int k = 0; k < HN.weight.size(); k++) {
-//                    Double hidden_weight = HN.weight.get(k) + HN.ErrorSignal*(sensor_values_list[j])*learning_rate;
-//                    HN.weight.set(k, hidden_weight);
-//                }
+                Double hidden_weight = HN.weight.get(i) + HN.ErrorSignal*(sensor_values_list[i])*learning_rate;
+                HN.weight.set(i, hidden_weight);
             }
             HN.bias_weight = HN.bias_weight + HN.ErrorSignal*HN.bias*learning_rate; // Updates Bias Weights
         }
