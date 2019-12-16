@@ -38,7 +38,7 @@ public class Read_in_File {
             }
             k++;
         }
-        NeuralNet2 NN = new NeuralNet2(header.size()-1, num_hidden_neurons,  2, learning_rate);
+        NeuralNet2 NN = new NeuralNet2(header.size()-1, num_hidden_neurons,  10, learning_rate);
         RunNeuralNet(NN,desired_percentage_accuracy_training);
     }
 
@@ -67,7 +67,7 @@ public class Read_in_File {
                 }
             }
             percentage = (correct / total_trials) * 100;
-            if (epochs % 100000 == 0) {
+            if (epochs % 100 == 0) {
                 System.out.println("epochs: " + epochs );
                 System.out.println("percentage accuracy: " + percentage);
             }

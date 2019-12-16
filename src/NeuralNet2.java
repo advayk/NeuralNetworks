@@ -22,8 +22,8 @@ public  class NeuralNet2 {
     }
 
     public boolean read_in_example(ArrayList<Double> example) {
-        for (int i = 1; i < example.size(); i++) {
-            sensor_values_list[i-1] = example.get(i);
+        for (int i = 0; i < example.size()-1; i++) {
+            sensor_values_list[i] = example.get(i);
         }
         actual_category_value = example.get(example.size()-1);
         for (int i = 0; i < output_neuron_list.size(); i++) {
@@ -39,7 +39,9 @@ public  class NeuralNet2 {
         double output = output_neural_net();
         calculate_error_signals();
         update_weights();
-
+//        System.out.println(example);
+//        System.out.println("ACV: " + actual_category_value);
+//        System.out.println("--------");
         if(actual_category_value == output) {
             return true;
         }
@@ -86,7 +88,7 @@ public  class NeuralNet2 {
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
             Neuron HN = hidden_neuron_list.get(i);
             HN.ActualResult(sensor_values_list);
-            hidden_sensor_values_list[i] = HN.myActualResult; //TODO: Ask Andrew when running debugger first time the hidden sensor list is (0,0)
+            hidden_sensor_values_list[i] = HN.myActualResult;
         }
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
