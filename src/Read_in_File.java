@@ -5,104 +5,28 @@ import java.util.ArrayList;
 // Neural Nets
 
 public class Read_in_File {
-    ArrayList<ArrayList<Double>> TrainingData = new ArrayList<>();
-    ArrayList<ArrayList<Double>> TestingData = new ArrayList<>();
-
-    ArrayList<String> header = new ArrayList<>();
-    ArrayList<String> category_value_list = new ArrayList<>();
-    double learning_rate;
-    int num_hidden_neurons;
-    ArrayList<String> sensor_weights = new ArrayList<>();
-    String filename;
 
 
-    public void read_in_training_file(String filename, int desired_percentage_accuracy_training, double learning_rate, int num_hidden_neurons) {
+
+    public static ArrayList<ArrayList<Double>> set_up_data(String filename) {
         SimpleFile file = new SimpleFile("files", filename);
-        this.learning_rate = learning_rate;
-        this.filename = filename;
+        ArrayList<ArrayList<Double>> Data = new ArrayList<>();
         int i = 0;
         int k = 0;
         for (String line : file) {
             ArrayList<Double> example = new ArrayList<>();
             for (String word : line.split(",")) {
-                if (k == 0) {
-                    header.add(word);
-                }
                 if (k >= 1) {
                     double int_to_word = Double.parseDouble(word);
                     example.add(int_to_word);
                 }
             }
             if (k >= 1) {
-                TrainingData.add(example); // prints the line
+                Data.add(example); // prints the line
             }
             k++;
         }
-    }
-
-    public void read_in_testing_file(String filename, int desired_percentage_accuracy_training, double learning_rate, int num_hidden_neurons) {
-        SimpleFile file = new SimpleFile("files", filename);
-        int num_lines = 0;
-        int i = 0;
-        int k = 0;
-        for (String line : file) {
-            num_lines +=1;
-            ArrayList<Double> example = new ArrayList<>();
-            for (String word : line.split(",")) {
-                if (k == 0) {
-                    header.add(word);
-                }
-                if (k >= 1) {
-                    double int_to_word = Double.parseDouble(word);
-                    example.add(int_to_word);
-                }
-            }
-            if (k >= 1) {
-                TestingData.add(example); // prints the line
-            }
-            k++;
-        }
-        NeuralNet2 NN = new NeuralNet2(header.size()-1, num_hidden_neurons,  10, learning_rate);
-        RunNeuralNet(NN,desired_percentage_accuracy_training);
-    }
-
-    public void RunNeuralNet(NeuralNet2 NN,int desired_percentage_accuracy_training) {
-        System.out.println("------------- Results for " + filename + "--------");
-        double percentage = 0;
-        double epochs = 0;
-        while(percentage < desired_percentage_accuracy_training) {
-            if(epochs > 1000000000) {
-                System.out.println("----------------------------------");
-                System.out.println("over 1 mil epochs can not complete");
-                System.out.println("----------------------------------");
-                break;
-            }
-            epochs += 1;
-            double total_trials = 0;
-            double correct = 0;
-            int incorrect = 0;
-            for (int j = 0; j < TrainingData.size(); j++) {
-                NN.read_in_example(TrainingData.get(j));
-            }
-
-            if (epochs % 100 == 0) {
-                for (int j = 0; j < TestingData.size(); j++) {
-                    total_trials += 1;
-                    if (NN.run_on_example_testing(TestingData.get(j)) == true) {
-                        correct += 1;
-                    } else {
-                        incorrect += 1;
-                    }
-                }
-                percentage = (correct / total_trials) * 100;
-                System.out.println("epochs: " + epochs );
-                System.out.println("percentage accuracy: " + percentage);
-            }
-        }
-        System.out.println("");
-        System.out.println("epochs: " + epochs );
-        System.out.println("percentage accuracy: " + percentage);
-        System.out.println("-------------------------------------------------------");
+        return Data;
     }
 }
 
