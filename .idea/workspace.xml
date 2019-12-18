@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c33f7ad-1abc-48c0-9040-49acefd17e73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/files/HandwrittenTestingSet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/NeuralNet2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/NeuralNet2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Neuron.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Neuron.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Read_in_File.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/Read_in_File.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile$SimpleFileException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile$SimpleFileException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile$SimpleFileIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile$SimpleFileIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Example.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/NeuralNet2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Neuron.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/Read_in_File.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile$SimpleFileException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile$SimpleFileIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NeuralNetworks/SimpleFile.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Read_in_File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Read_in_File.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -111,30 +109,34 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="441" y="236" key="#Project_Structure/0.23.1792.1097@0.23.1792.1097" timestamp="1576631300970" />
-    <state x="360" y="233" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576632120792">
+    <state x="360" y="233" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576633821606">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state x="360" y="233" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1576632120792" />
+    <state x="360" y="233" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1576633821606" />
     <state x="556" y="381" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576632627387">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state x="556" y="381" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1097@0.23.1792.1097" timestamp="1576632627387" />
-    <state width="1677" height="433" key="GridCell.Tab.0.bottom" timestamp="1576632678802">
+    <state x="358" y="173" key="CommitChangelistDialog2" timestamp="1576634220961">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1677" height="433" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1576632678802" />
-    <state width="1677" height="433" key="GridCell.Tab.0.center" timestamp="1576632678801">
+    <state x="358" y="173" key="CommitChangelistDialog2/0.23.1792.1097@0.23.1792.1097" timestamp="1576634220961" />
+    <state width="1677" height="433" key="GridCell.Tab.0.bottom" timestamp="1576634249659">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1677" height="433" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1576632678801" />
-    <state width="1677" height="433" key="GridCell.Tab.0.left" timestamp="1576632678801">
+    <state width="1677" height="433" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1576634249659" />
+    <state width="1677" height="433" key="GridCell.Tab.0.center" timestamp="1576634249658">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1677" height="433" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1576632678801" />
-    <state width="1677" height="433" key="GridCell.Tab.0.right" timestamp="1576632678802">
+    <state width="1677" height="433" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1576634249658" />
+    <state width="1677" height="433" key="GridCell.Tab.0.left" timestamp="1576634249657">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
-    <state width="1677" height="433" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1576632678802" />
+    <state width="1677" height="433" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1576634249657" />
+    <state width="1677" height="433" key="GridCell.Tab.0.right" timestamp="1576634249658">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1677" height="433" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1576634249658" />
     <state width="1677" height="362" key="GridCell.Tab.1.bottom" timestamp="1576632211582">
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
@@ -151,5 +153,9 @@
       <screen x="0" y="23" width="1792" height="1097" />
     </state>
     <state width="1677" height="362" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1576632211581" />
+    <state x="383" y="210" key="SettingsEditor" timestamp="1576634173312">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="383" y="210" key="SettingsEditor/0.23.1792.1097@0.23.1792.1097" timestamp="1576634173312" />
   </component>
 </project>
