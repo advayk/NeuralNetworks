@@ -5,7 +5,9 @@ import java.util.ArrayList;
 // Neural Nets
 
 public class Read_in_File {
-    ArrayList<ArrayList<Double>> data = new ArrayList<>();
+    ArrayList<ArrayList<Double>> TrainingData = new ArrayList<>();
+    ArrayList<ArrayList<Double>> TestingData = new ArrayList<>();
+
     ArrayList<String> header = new ArrayList<>();
     ArrayList<String> category_value_list = new ArrayList<>();
     double learning_rate;
@@ -14,7 +16,7 @@ public class Read_in_File {
     String filename;
 
 
-    public void read_file(String filename, int desired_percentage_accuracy_training, double learning_rate, int num_hidden_neurons) {
+    public void read_in_training_file(String filename, int desired_percentage_accuracy_training, double learning_rate, int num_hidden_neurons) {
         SimpleFile file = new SimpleFile("files", filename);
         this.learning_rate = learning_rate;
         this.filename = filename;
@@ -34,7 +36,7 @@ public class Read_in_File {
                 }
             }
             if (k >= 1) {
-                data.add(example); // prints the line
+                TrainingData.add(example); // prints the line
             }
             k++;
         }
@@ -42,6 +44,29 @@ public class Read_in_File {
         RunNeuralNet(NN,desired_percentage_accuracy_training);
     }
 
+    public void read_in_testing_file(String filename, int desired_percentage_accuracy_training, double learning_rate, int num_hidden_neurons) {
+        SimpleFile file = new SimpleFile("files", filename);
+        int num_lines = 0;
+        int i = 0;
+        int k = 0;
+        for (String line : file) {
+            num_lines +=1;
+            ArrayList<Double> example = new ArrayList<>();
+            for (String word : line.split(",")) {
+                if (k == 0) {
+                    header.add(word);
+                }
+                if (k >= 1) {
+                    double int_to_word = Double.parseDouble(word);
+                    example.add(int_to_word);
+                }
+            }
+            if (k >= 1) {
+                TestingData.add(example); // prints the line
+            }
+            k++;
+        }
+    }
 
     public void RunNeuralNet(NeuralNet2 NN,int desired_percentage_accuracy_training) {
         System.out.println("------------- Results for " + filename + "--------");
@@ -58,16 +83,20 @@ public class Read_in_File {
             double total_trials = 0;
             double correct = 0;
             int incorrect = 0;
-            for (int j = 0; j < data.size(); j++) {
-                total_trials += 1;
-                if (NN.read_in_example(data.get(j)) == true) {
-                    correct += 1;
-                } else {
-                    incorrect += 1;
-                }
+            for (int j = 0; j < TrainingData.size(); j++) {
+                NN.read_in_example(TrainingData.get(j));
             }
-            percentage = (correct / total_trials) * 100;
+
             if (epochs % 100 == 0) {
+                for (int j = 0; j < TrainingData.size(); j++) {
+                    total_trials += 1;
+                    if (NN.run_on_example_testing(TestingData.get(j)) == true) {
+                        correct += 1;
+                    } else {
+                        incorrect += 1;
+                    }
+                }
+                percentage = (correct / total_trials) * 100;
                 System.out.println("epochs: " + epochs );
                 System.out.println("percentage accuracy: " + percentage);
             }

@@ -50,6 +50,34 @@ public  class NeuralNet2 {
         }
     }
 
+    public boolean run_on_example_testing(ArrayList<Double> example) {
+        for (int i = 0; i < example.size()-1; i++) {
+            sensor_values_list[i] = example.get(i);
+        }
+        actual_category_value = example.get(example.size()-1);
+        for (int i = 0; i < output_neuron_list.size(); i++) {
+            Neuron ON = output_neuron_list.get(i);
+            if(ON.label == actual_category_value) {
+                ON.CorrectResult = 1;
+            }
+            else{
+                ON.CorrectResult = 0;
+            }
+        }
+        run_neural_net_on_example();
+        double output = output_neural_net();
+        if(actual_category_value == output) {
+            return true;
+        }
+        else {
+            return false;
+        }
+//        System.out.println(example);
+//        System.out.println("ACV: " + actual_category_value);
+//        System.out.println("--------");
+
+    }
+
     public void set_topology(int num_input_neuron, int num_hidden_neuron, int num_output_neuron) {
         for (int i = 0; i < num_hidden_neuron; i++) {
             Neuron HN = new Neuron();
