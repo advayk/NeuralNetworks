@@ -20,11 +20,9 @@ public class Read_in_File {
         SimpleFile file = new SimpleFile("files", filename);
         this.learning_rate = learning_rate;
         this.filename = filename;
-        int num_lines = 0;
         int i = 0;
         int k = 0;
         for (String line : file) {
-            num_lines +=1;
             ArrayList<Double> example = new ArrayList<>();
             for (String word : line.split(",")) {
                 if (k == 0) {
@@ -40,8 +38,6 @@ public class Read_in_File {
             }
             k++;
         }
-        NeuralNet2 NN = new NeuralNet2(header.size()-1, num_hidden_neurons,  10, learning_rate);
-        RunNeuralNet(NN,desired_percentage_accuracy_training);
     }
 
     public void read_in_testing_file(String filename, int desired_percentage_accuracy_training, double learning_rate, int num_hidden_neurons) {
@@ -66,6 +62,8 @@ public class Read_in_File {
             }
             k++;
         }
+        NeuralNet2 NN = new NeuralNet2(header.size()-1, num_hidden_neurons,  10, learning_rate);
+        RunNeuralNet(NN,desired_percentage_accuracy_training);
     }
 
     public void RunNeuralNet(NeuralNet2 NN,int desired_percentage_accuracy_training) {
@@ -88,7 +86,7 @@ public class Read_in_File {
             }
 
             if (epochs % 100 == 0) {
-                for (int j = 0; j < TrainingData.size(); j++) {
+                for (int j = 0; j < TestingData.size(); j++) {
                     total_trials += 1;
                     if (NN.run_on_example_testing(TestingData.get(j)) == true) {
                         correct += 1;
