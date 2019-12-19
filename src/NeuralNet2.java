@@ -21,7 +21,7 @@ public  class NeuralNet2 {
         output_sensor_values_list = new double [num_output_neuron];
     }
 
-    public boolean read_in_example(ArrayList<Double> example) {
+    public boolean run_on_example_training(ArrayList<Double> example) {
         for (int i = 0; i < example.size()-1; i++) {
             sensor_values_list[i] = example.get(i);
         }

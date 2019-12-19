@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-     //  Go("XORDataSet2", "XORDataSet2", 100, 2, 2,0.05, "XORDataSet2");
-     //  Go("AndDataSet", "AndDataSet", 100, 2, 2,1.0, "AndDataSet");
-        Go("HandwrittenTrainingSet", "HandwrittenTestingSet", 89, 140, 10,0.06,"HandwrittenTrainingSet");
+      // Go("XORDataSet2", "XORDataSet2", 100, 2, 2,0.05, "XORDataSet2");
+   //    Go("AndDataSet", "AndDataSet", 100, 2, 2,1.0, "AndDataSet");
+        Go("HandwrittenTrainingSet", "HandwrittenTestingSet", 99, 140, 10,0.06,"HandwrittenTrainingSet");
 
 
 

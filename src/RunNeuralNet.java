@@ -24,7 +24,7 @@ public class RunNeuralNet {
             double correct_training = 0;
             for (int j = 0; j < TrainingData.size(); j++) {
                 total_trials_training += 1;
-                if (NN.read_in_example(TrainingData.get(j)) == true) {
+                if (NN.run_on_example_training(TrainingData.get(j))) {
                     correct_training += 1;
                 }
             }
@@ -36,7 +36,7 @@ public class RunNeuralNet {
         double correct_testing = 0;
         for (int j = 0; j < TestingData.size(); j++) {
             total_trials_testing += 1;
-            if (NN.run_on_example_testing(TestingData.get(j)) == true) {
+            if (NN.run_on_example_testing(TestingData.get(j))) {
                 correct_testing += 1;
             }
         }
