@@ -55,15 +55,6 @@ public  class NeuralNet2 {
             sensor_values_list[i] = example.get(i);
         }
         actual_category_value = example.get(example.size()-1);
-        for (int i = 0; i < output_neuron_list.size(); i++) {
-            Neuron ON = output_neuron_list.get(i);
-            if(ON.label == actual_category_value) {
-                ON.CorrectResult = 1;
-            }
-            else{
-                ON.CorrectResult = 0;
-            }
-        }
         run_neural_net_on_example();
         double output = output_neural_net();
         if(actual_category_value == output) {
@@ -115,12 +106,12 @@ public  class NeuralNet2 {
     private void run_neural_net_on_example() {
         for (int i = 0; i < hidden_neuron_list.size(); i++) {
             Neuron HN = hidden_neuron_list.get(i);
-            HN.ActualResult(sensor_values_list);
+            HN.CalculateActualResult(sensor_values_list);
             hidden_sensor_values_list[i] = HN.myActualResult;
         }
         for (int i = 0; i < output_neuron_list.size(); i++) {
             Neuron ON = output_neuron_list.get(i);
-            ON.ActualResult(hidden_sensor_values_list);
+            ON.CalculateActualResult(hidden_sensor_values_list);
             output_sensor_values_list[i] = ON.myActualResult;
         }
     }

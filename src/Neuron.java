@@ -14,7 +14,7 @@ public class Neuron {
 
     }
 
-    public void ActualResult(double [] input) {
+    public void CalculateActualResult(double [] input) {
         double sum = 0;
         for (int i = 0; i < input.length; i++) {
             sum  += input[i] * weight.get(i);
