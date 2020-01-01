@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public  class NeuralNet2 {
     private double learning_rate;
 
-
     private ArrayList<Neuron> hidden_neuron_list = new ArrayList<Neuron>();
     private ArrayList<Neuron> output_neuron_list = new ArrayList<Neuron>();
     private Double actual_category_value;
@@ -39,9 +38,7 @@ public  class NeuralNet2 {
         double output = output_neural_net();
         calculate_error_signals();
         update_weights();
-//        System.out.println(example);
-//        System.out.println("ACV: " + actual_category_value);
-//        System.out.println("--------");
+
         if(actual_category_value == output) {
             return true;
         }
@@ -63,9 +60,7 @@ public  class NeuralNet2 {
         else {
             return false;
         }
-//        System.out.println(example);
-//        System.out.println("ACV: " + actual_category_value);
-//        System.out.println("--------");
+
 
     }
 

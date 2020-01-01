@@ -6,16 +6,16 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         System.out.println("loading in file");
-        mnist_go();
-    //   Go("XORDataSet2", "XORDataSet2", 100, 2, 2,0.05, "XORDataSet2");
+       mnist_go();
+      //  go("XORDataSet2", "XORDataSet2", 100, 2, 2,0.05, "XORDataSet2");
    //    Go("AndDataSet", "AndDataSet", 100, 2, 2,1.0, "AndDataSet");
-      //  go("HandwrittenTrainingSet", "HandwrittenTestingSet", 99, 140, 10,0.06,"HandwrittenTrainingSet");
+     //   go("HandwrittenTrainingSet", "HandwrittenTestingSet", 99, 140, 10,0.06,"HandwrittenTrainingSet");
 
     }
     public static void mnist_go() {
         ArrayList<ArrayList<Double>> trainingExamples = readData("train-labels-idx1-ubyte", "train-images-idx3-ubyte");
         ArrayList<ArrayList<Double>> testingExamples = readData("t10k-labels-idx1-ubyte", "t10k-images-idx3-ubyte");
-        go_MNIST(trainingExamples, testingExamples, 99, 140, 10,0.06,"HandwrittenTrainingSet");
+        go_MNIST(trainingExamples, testingExamples, 99, 140, 10,0.06,"mnist");
 
     }
 
@@ -76,16 +76,13 @@ public class Main {
         ArrayList<ArrayList<Double>> myTrainingFile = Read_in_File.set_up_data(TrainingFile);
         ArrayList<ArrayList<Double>> myTestingFile = Read_in_File.set_up_data(TestingFile);
         NeuralNet2 NN = new NeuralNet2(myTestingFile.get(0).size()-1, num_hidden_neurons,  num_output_neuron, learning_rate);
-        System.out.println("TRAINING: " + myTrainingFile);
-        System.out.println("Testing: " + myTestingFile);
-        System.out.println("Running Neural Net");
+
         RunNeuralNet RunNet = new RunNeuralNet();
         RunNet.run_neural_net(NN, myTrainingFile, myTestingFile, desired_percentage_accuracy_training, filename);
     }
+
     public static void go_MNIST(ArrayList<ArrayList<Double>> TrainingFile, ArrayList<ArrayList<Double>> TestingFile, int desired_percentage_accuracy_training, int num_hidden_neurons, int num_output_neuron, double learning_rate, String filename) {
         NeuralNet2 NN = new NeuralNet2(TestingFile.get(0).size()-1, num_hidden_neurons,  num_output_neuron, learning_rate);
-        System.out.println("TRAINING: " + TrainingFile);
-        System.out.println("Testing: " + TestingFile);
         System.out.println("Running Neural Net");
         RunNeuralNet RunNet = new RunNeuralNet();
         RunNet.run_neural_net(NN, TrainingFile, TestingFile, desired_percentage_accuracy_training, filename);
