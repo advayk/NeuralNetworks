@@ -23,20 +23,25 @@ public class RunNeuralNet {
             double total_trials_training = 0;
             double correct_training = 0;
             for (int j = 0; j < TrainingData.size(); j++) {
+                NN.train_on_example(TrainingData.get(j));
+            }
+            for (int j = 0; j < TrainingData.size(); j++) {
                 total_trials_training += 1;
-                if (NN.run_on_example_training(TrainingData.get(j))) {
+                if (NN.check_output(TrainingData.get(j))) {
                     correct_training += 1;
                 }
             }
             training_percentage = (correct_training / total_trials_training) * 100;
             System.out.println("epochs: " + epochs);
             System.out.println("training_percentage accuracy: " + training_percentage);
+
+
         }
         double total_trials_testing = 0;
         double correct_testing = 0;
         for (int j = 0; j < TestingData.size(); j++) {
             total_trials_testing += 1;
-            if (NN.run_on_example_testing(TestingData.get(j))) {
+            if (NN.check_output(TestingData.get(j))) {
                 correct_testing += 1;
             }
         }
