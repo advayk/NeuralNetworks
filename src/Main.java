@@ -6,22 +6,23 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         System.out.println("loading in file");
-       mnist_go();
-      //  go("XORDataSet2", "XORDataSet2", 100, 2, 2,0.05, "XORDataSet2");
-   //    Go("AndDataSet", "AndDataSet", 100, 2, 2,1.0, "AndDataSet");
-     //   go("HandwrittenTrainingSet", "HandwrittenTestingSet", 99, 140, 10,0.06,"HandwrittenTrainingSet");
+        mnist_go();
+       // go("XORDataSet2", "XORDataSet2", 100, 2, 2,0.05, "XORDataSet2");
+      // go("AndDataSet", "AndDataSet", 100, 2, 2,1.0, "AndDataSet");
+       // go("HandwrittenTrainingSet", "HandwrittenTestingSet", 99, 140, 10,0.06,"HandwrittenTrainingSet");
 
     }
     public static void mnist_go() {
-        ArrayList<ArrayList<Double>> trainingExamples = readData("train-labels-idx1-ubyte", "train-images-idx3-ubyte");
-        ArrayList<ArrayList<Double>> testingExamples = readData("t10k-labels-idx1-ubyte", "t10k-images-idx3-ubyte");
-        go_MNIST(trainingExamples, testingExamples, 99, 140, 10,0.06,"mnist");
+       ArrayList<ArrayList<Double>> trainingExamples = readData("files/train-labels-idx1-ubyte", "files/train-images-idx3-ubyte");
+        System.out.println(trainingExamples);
+        ArrayList<ArrayList<Double>> testingExamples = readData("files/t10k-labels-idx1-ubyte", "files/t10k-images-idx3-ubyte");
+        go_MNIST(trainingExamples, testingExamples, 100, 140, 10,0.06,"mnist");
 
     }
 
 
     static ArrayList<ArrayList<Double>>  readData(String labelFileName, String imageFileName) {
-        System.out.println("working");
+//        System.out.println("working");
         DataInputStream labelStream = openFile(labelFileName, 2049);
         DataInputStream imageStream = openFile(imageFileName, 2051);
 
@@ -41,13 +42,15 @@ public class Main {
                 int categoryLabel = Byte.toUnsignedInt(labelStream.readByte());
                 ArrayList<Double> inputs = new ArrayList<>();
                // double[] inputs = new double[rows * cols];
+                int total = rows*cols;
                 for (int r = 0; r < rows; r++) {
                     for (int c = 0; c < cols; c++) {
                         int pixel = 255 - Byte.toUnsignedInt(imageStream.readByte());
-                        inputs.add(r * rows + c,(pixel / 255.0));
+                        inputs.add(r * rows + c, (pixel / 255.0));
                     }
                 }
-                inputs.add(inputs.size()-1, (double) categoryLabel);
+
+                inputs.add(total, (double) categoryLabel);
                 data.add(inputs);
             }
         } catch (IOException e) {
@@ -76,6 +79,7 @@ public class Main {
         ArrayList<ArrayList<Double>> myTrainingFile = Read_in_File.set_up_data(TrainingFile);
         ArrayList<ArrayList<Double>> myTestingFile = Read_in_File.set_up_data(TestingFile);
         NeuralNet2 NN = new NeuralNet2(myTestingFile.get(0).size()-1, num_hidden_neurons,  num_output_neuron, learning_rate);
+        //System.out.println(myTrainingFile);
 
         RunNeuralNet RunNet = new RunNeuralNet();
         RunNet.run_neural_net(NN, myTrainingFile, myTestingFile, desired_percentage_accuracy_training, filename);
