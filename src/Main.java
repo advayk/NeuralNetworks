@@ -14,10 +14,9 @@ public class Main {
     }
     public static void mnist_go() {
        ArrayList<ArrayList<Double>> trainingExamples = readData("files/train-labels-idx1-ubyte", "files/train-images-idx3-ubyte");
-        System.out.println(trainingExamples);
+      //  System.out.println(trainingExamples);
         ArrayList<ArrayList<Double>> testingExamples = readData("files/t10k-labels-idx1-ubyte", "files/t10k-images-idx3-ubyte");
-        go_MNIST(trainingExamples, testingExamples, 100, 140, 10,0.06,"mnist");
-
+        go_MNIST(trainingExamples, testingExamples, 99, 140, 10,0.06,"mnist");
     }
 
 

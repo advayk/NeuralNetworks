@@ -10,6 +10,8 @@ public class RunNeuralNet {
         double training_percentage = 0;
         double epochs = 0;
         long startTime = System.currentTimeMillis();
+        long per_epoch_Time = System.currentTimeMillis();
+
         while (training_percentage < desired_percentage_accuracy_training) {
             if (epochs > 1000000000) {
                 System.out.println("----------------------------------");
@@ -24,17 +26,17 @@ public class RunNeuralNet {
             for (int j = 0; j < TrainingData.size(); j++) {
                 NN.train_on_example(TrainingData.get(j));
             }
+            long endTime_epoch = System.currentTimeMillis();
+            double time =  (endTime_epoch - per_epoch_Time); // Timer taken from: https://stackoverflow
             for (int j = 0; j < TrainingData.size(); j++) {
                 total_trials_training += 1;
                 if (NN.check_output(TrainingData.get(j))) {
                     correct_training += 1;
                 }
             }
-            System.out.println("correct_training: " + correct_training);
-
             training_percentage = (correct_training / total_trials_training) * 100;
-            System.out.println("epochs: " + epochs);
-            System.out.println("training_percentage accuracy: " + training_percentage);
+            System.out.println(epochs + ","  + training_percentage );
+//            System.out.println(time + ","  + training_percentage );
 
 
         }
