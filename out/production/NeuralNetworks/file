@@ -1,0 +1,258 @@
+"/Applications/IntelliJ IDEA CE.app/Contents/jbr/Contents/Home/bin/java" "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51182:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath "/Users/akoranne/Desktop/Home/Catlin Gabel 2019-2020/Computer Science III/NeuralNetworksCS/out/production/NeuralNetworks" Main
+loading in file
+Running Neural Net
+correct_training: 54236.0
+1.0,90.39333333333333
+correct_training: 55736.0
+2.0,92.89333333333335
+correct_training: 56399.0
+3.0,93.99833333333333
+correct_training: 56832.0
+4.0,94.72
+correct_training: 57177.0
+5.0,95.295
+correct_training: 57092.0
+6.0,95.15333333333334
+correct_training: 57418.0
+7.0,95.69666666666666
+correct_training: 57295.0
+8.0,95.49166666666666
+correct_training: 57527.0
+9.0,95.87833333333333
+correct_training: 57529.0
+10.0,95.88166666666666
+correct_training: 57503.0
+11.0,95.83833333333334
+correct_training: 57885.0
+12.0,96.475
+correct_training: 58026.0
+13.0,96.71
+correct_training: 57939.0
+14.0,96.565
+correct_training: 58133.0
+15.0,96.88833333333334
+correct_training: 58197.0
+16.0,96.995
+correct_training: 58175.0
+17.0,96.95833333333333
+correct_training: 58340.0
+18.0,97.23333333333333
+correct_training: 58387.0
+19.0,97.31166666666667
+correct_training: 58324.0
+20.0,97.20666666666666
+correct_training: 58470.0
+21.0,97.45
+correct_training: 58414.0
+22.0,97.35666666666667
+correct_training: 58443.0
+23.0,97.405
+correct_training: 58389.0
+24.0,97.315
+correct_training: 58614.0
+25.0,97.69
+correct_training: 58608.0
+26.0,97.68
+correct_training: 58413.0
+27.0,97.355
+correct_training: 58527.0
+28.0,97.545
+correct_training: 58443.0
+29.0,97.405
+correct_training: 58545.0
+30.0,97.575
+correct_training: 58544.0
+31.0,97.57333333333334
+correct_training: 58558.0
+32.0,97.59666666666666
+correct_training: 58710.0
+33.0,97.85000000000001
+correct_training: 58638.0
+34.0,97.72999999999999
+correct_training: 58700.0
+35.0,97.83333333333334
+correct_training: 58653.0
+36.0,97.75500000000001
+correct_training: 58537.0
+37.0,97.56166666666667
+correct_training: 58546.0
+38.0,97.57666666666667
+correct_training: 58618.0
+39.0,97.69666666666666
+correct_training: 58621.0
+40.0,97.70166666666667
+correct_training: 58676.0
+41.0,97.79333333333334
+correct_training: 58671.0
+42.0,97.785
+correct_training: 58773.0
+43.0,97.955
+correct_training: 58754.0
+44.0,97.92333333333333
+correct_training: 58729.0
+45.0,97.88166666666666
+correct_training: 58718.0
+46.0,97.86333333333333
+correct_training: 58913.0
+47.0,98.18833333333333
+correct_training: 58799.0
+48.0,97.99833333333333
+correct_training: 58737.0
+49.0,97.895
+correct_training: 58847.0
+50.0,98.07833333333333
+correct_training: 58833.0
+51.0,98.055
+correct_training: 58532.0
+52.0,97.55333333333334
+correct_training: 58946.0
+53.0,98.24333333333334
+correct_training: 58790.0
+54.0,97.98333333333333
+correct_training: 58914.0
+55.0,98.19
+correct_training: 58971.0
+56.0,98.285
+correct_training: 58635.0
+57.0,97.725
+correct_training: 58941.0
+58.0,98.235
+correct_training: 58996.0
+59.0,98.32666666666667
+correct_training: 58938.0
+60.0,98.22999999999999
+correct_training: 59100.0
+61.0,98.5
+correct_training: 58598.0
+62.0,97.66333333333334
+correct_training: 58774.0
+63.0,97.95666666666666
+correct_training: 58969.0
+64.0,98.28166666666667
+correct_training: 59073.0
+65.0,98.455
+correct_training: 58812.0
+66.0,98.02
+correct_training: 59110.0
+67.0,98.51666666666667
+correct_training: 59101.0
+68.0,98.50166666666667
+correct_training: 59029.0
+69.0,98.38166666666666
+correct_training: 59121.0
+70.0,98.535
+correct_training: 59186.0
+71.0,98.64333333333335
+correct_training: 59165.0
+72.0,98.60833333333333
+correct_training: 59103.0
+73.0,98.505
+correct_training: 59095.0
+74.0,98.49166666666666
+correct_training: 59022.0
+75.0,98.37
+correct_training: 59181.0
+76.0,98.63499999999999
+correct_training: 59089.0
+77.0,98.48166666666667
+correct_training: 59223.0
+78.0,98.705
+correct_training: 59208.0
+79.0,98.68
+correct_training: 59146.0
+80.0,98.57666666666667
+correct_training: 58859.0
+81.0,98.09833333333333
+correct_training: 59201.0
+82.0,98.66833333333334
+correct_training: 59205.0
+83.0,98.675
+correct_training: 59244.0
+84.0,98.74000000000001
+correct_training: 59203.0
+85.0,98.67166666666667
+correct_training: 59117.0
+86.0,98.52833333333334
+correct_training: 59250.0
+87.0,98.75
+correct_training: 59154.0
+88.0,98.59
+correct_training: 59222.0
+89.0,98.70333333333333
+correct_training: 59096.0
+90.0,98.49333333333334
+correct_training: 59282.0
+91.0,98.80333333333333
+correct_training: 59246.0
+92.0,98.74333333333334
+correct_training: 59088.0
+93.0,98.48
+correct_training: 59327.0
+94.0,98.87833333333333
+correct_training: 59212.0
+95.0,98.68666666666667
+correct_training: 59307.0
+96.0,98.845
+correct_training: 59277.0
+97.0,98.795
+correct_training: 59118.0
+98.0,98.53
+correct_training: 59197.0
+99.0,98.66166666666668
+correct_training: 59266.0
+100.0,98.77666666666667
+correct_training: 59070.0
+101.0,98.45
+correct_training: 59277.0
+102.0,98.795
+correct_training: 59356.0
+103.0,98.92666666666666
+correct_training: 59150.0
+104.0,98.58333333333333
+correct_training: 59270.0
+105.0,98.78333333333333
+correct_training: 59321.0
+106.0,98.86833333333334
+correct_training: 59335.0
+107.0,98.89166666666667
+correct_training: 59314.0
+108.0,98.85666666666667
+correct_training: 59340.0
+109.0,98.9
+correct_training: 59294.0
+110.0,98.82333333333332
+correct_training: 59282.0
+111.0,98.80333333333333
+correct_training: 59290.0
+112.0,98.81666666666666
+correct_training: 59301.0
+113.0,98.835
+correct_training: 59313.0
+114.0,98.855
+correct_training: 59384.0
+115.0,98.97333333333333
+correct_training: 59348.0
+116.0,98.91333333333333
+correct_training: 59302.0
+117.0,98.83666666666666
+correct_training: 59371.0
+118.0,98.95166666666667
+correct_training: 59369.0
+119.0,98.94833333333334
+correct_training: 59360.0
+120.0,98.93333333333332
+correct_training: 59350.0
+121.0,98.91666666666666
+correct_training: 59353.0
+122.0,98.92166666666667
+correct_training: 59404.0
+123.0,99.00666666666666
+----------final data-mnist-----------------------
+training percentage: 99.00666666666666
+That took 10039067 milliseconds
+
+epochs: 123.0
+testing_percentage accuracy: 97.48
+-------------------------------------------------------
+
+Process finished with exit code 0
