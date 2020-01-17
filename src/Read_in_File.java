@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 // Advay Koranne
 // Andrew Merill
@@ -17,7 +18,9 @@ public class Read_in_File {
             }
             Data.add(example);
         }
+        Collections.shuffle(Data);
         return Data;
+
     }
 }
 

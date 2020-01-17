@@ -60,8 +60,6 @@ public  class NeuralNet2 {
         else {
             return false;
         }
-
-
     }
 
     public void set_topology(int num_input_neuron, int num_hidden_neuron, int num_output_neuron) {
